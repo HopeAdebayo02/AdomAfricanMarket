@@ -1,2 +1,5 @@
 # AdomAfricanMarket
-D word website 
+D word website
+
+## Status
+Repo access verified. 
