@@ -103,8 +103,8 @@ function App() {
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center bg-stone-950 text-white overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: "url('/images/hero.jpg')" }}
+                    className="absolute inset-0 bg-cover bg-center opacity-60"
+                    style={{ backgroundImage: "url('/images/hero-bg.webp')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-stone-950/60 via-stone-950/40 to-stone-950/80" />
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
