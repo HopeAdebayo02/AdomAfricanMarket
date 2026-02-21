@@ -296,10 +296,10 @@ function App() {
           <div className="text-center mb-10 sm:mb-14">
             <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Gani Shipping</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-              Ship to Africa & Beyond
+              Ship to Ghana
             </h2>
             <p className="text-stone-600 leading-relaxed mt-6 max-w-2xl mx-auto text-sm sm:text-base">
-              Send packages to Ghana and across Africa with our trusted Gani Shipping service. We offer local moving and international shipping at competitive rates, right from our store.
+              Send packages to Ghana with our trusted Gani Shipping service. We offer reliable shipping from Minneapolis to Ghana and local moving services at competitive rates, right from our store.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -308,7 +308,7 @@ function App() {
                 <MapPin size={24} className="text-amber-600" />
               </div>
               <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-3">Shipping to Ghana</h3>
-              <p className="text-stone-500 text-sm leading-relaxed">Reliable door-to-door shipping from Minneapolis to cities across Ghana. Fast and affordable.</p>
+              <p className="text-stone-500 text-sm leading-relaxed">Reliable door-to-door shipping from Minneapolis to cities across Ghana. We exclusively ship to Ghana — fast and affordable.</p>
             </div>
             <div className="bg-white border border-stone-200 p-6 sm:p-8 text-center hover:border-amber-500 transition-all duration-300">
               <div className="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5">
