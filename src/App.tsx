@@ -148,9 +148,10 @@ function App() {
               <div className="mt-10 sm:mt-12 flex gap-6 sm:gap-8 items-start">
                 <div>
                   <h3 className="text-sm font-semibold tracking-wider uppercase mb-3 underline underline-offset-4">Store Hours</h3>
-                  <p className="text-stone-600 text-xs sm:text-sm">Monday - Thursday: 9:00 AM - 8:00 PM</p>
-                  <p className="text-stone-600 text-xs sm:text-sm">Friday - Saturday: 9:00 AM - 9:00 PM</p>
-                  <p className="text-stone-600 text-xs sm:text-sm">Sunday: 10:00 AM - 6:00 PM</p>
+                  <p className="text-stone-600 text-xs sm:text-sm">Monday - Wednesday: 10 AM - 7 PM</p>
+                  <p className="text-stone-600 text-xs sm:text-sm">Thursday: 10 AM - 7 PM</p>
+                  <p className="text-stone-600 text-xs sm:text-sm">Friday - Saturday: 10 AM - 7 PM</p>
+                  <p className="text-stone-600 text-xs sm:text-sm">Sunday: 1:30 - 5 PM</p>
                 </div>
                 <img
                   src="/images/about2.jpg"
@@ -425,15 +426,15 @@ function App() {
                 <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 text-amber-500">Visit Us</h3>
                 <div className="flex items-start gap-3 text-stone-400 text-sm">
                   <MapPin size={18} className="flex-shrink-0 mt-0.5" />
-                  <p>123 Market Street, Suite 100<br />Columbus, OH 43215</p>
+                  <p>1224 E 66th St<br />Minneapolis, MN 55423</p>
                 </div>
               </div>
               <div>
                 <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 text-amber-500">Contact</h3>
                 <div className="space-y-3">
-                  <a href="tel:+16145551234" className="flex items-center gap-3 text-stone-400 text-sm hover:text-amber-500 transition-colors">
+                  <a href="tel:+16125551234" className="flex items-center gap-3 text-stone-400 text-sm hover:text-amber-500 transition-colors">
                     <Phone size={18} className="flex-shrink-0" />
-                    +1 (614) 555-1234
+                    +1 (612) 555-1234
                   </a>
                   <a href="mailto:info@adomafricanmarket.com" className="flex items-center gap-3 text-stone-400 text-sm hover:text-amber-500 transition-colors">
                     <Mail size={18} className="flex-shrink-0" />
@@ -446,9 +447,8 @@ function App() {
                 <div className="flex items-start gap-3 text-stone-400 text-sm">
                   <Clock size={18} className="flex-shrink-0 mt-0.5" />
                   <div>
-                    <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
-                    <p>Saturday: 9:00 AM - 9:00 PM</p>
-                    <p>Sunday: 10:00 AM - 6:00 PM</p>
+                    <p>Monday - Saturday: 10 AM - 7 PM</p>
+                    <p>Sunday: 1:30 - 5 PM</p>
                   </div>
                 </div>
               </div>
@@ -505,18 +505,17 @@ function App() {
             <div>
               <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 sm:mb-6">Contact Us</h3>
               <div className="space-y-3 text-stone-400 text-sm">
-                <p>123 Market Street, Suite 100</p>
-                <p>Columbus, OH 43215</p>
+                <p>1224 E 66th St</p>
+                <p>Minneapolis, MN 55423</p>
                 <a href="mailto:info@adomafricanmarket.com" className="block hover:text-amber-500 transition-colors">info@adomafricanmarket.com</a>
-                <a href="tel:+16145551234" className="block hover:text-amber-500 transition-colors">+1 (614) 555-1234</a>
+                <a href="tel:+16125551234" className="block hover:text-amber-500 transition-colors">+1 (612) 555-1234</a>
               </div>
             </div>
             <div>
               <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 sm:mb-6">Store Hours</h3>
               <div className="space-y-2 text-stone-400 text-sm">
-                <p>Mon - Fri: 9AM - 8PM</p>
-                <p>Saturday: 9AM - 9PM</p>
-                <p>Sunday: 10AM - 6PM</p>
+                <p>Mon - Sat: 10 AM - 7 PM</p>
+                <p>Sunday: 1:30 - 5 PM</p>
               </div>
               <div className="flex gap-3 mt-6">
                 <a href="#" className="w-8 h-8 border border-stone-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-500 transition-colors" aria-label="Facebook">
