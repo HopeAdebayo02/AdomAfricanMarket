@@ -65,6 +65,7 @@ function App() {
               <a href="#about" className="text-sm tracking-wider hover:text-amber-500 transition-colors uppercase">About</a>
               <a href="#products" className="text-sm tracking-wider hover:text-amber-500 transition-colors uppercase">Products</a>
               <a href="#menu" className="text-sm tracking-wider hover:text-amber-500 transition-colors uppercase">Menu</a>
+              <a href="#shipping" className="text-sm tracking-wider hover:text-amber-500 transition-colors uppercase">Gani Shipping</a>
               <a href="#contact" className="text-sm tracking-wider hover:text-amber-500 transition-colors uppercase">Contact</a>
             </div>
 
@@ -94,6 +95,7 @@ function App() {
               <a href="#about" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>About</a>
               <a href="#products" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Products</a>
               <a href="#menu" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Menu</a>
+              <a href="#shipping" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Gani Shipping</a>
               <a href="#contact" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Contact</a>
             </div>
           </div>
@@ -288,6 +290,47 @@ function App() {
         </div>
       </section>
 
+      {/* Gani Shipping */}
+      <section id="shipping" className="py-16 sm:py-20 lg:py-28 bg-amber-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Gani Shipping</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+              Ship to Africa & Beyond
+            </h2>
+            <p className="text-stone-600 leading-relaxed mt-6 max-w-2xl mx-auto text-sm sm:text-base">
+              Send packages to Ghana and across Africa with our trusted Gani Shipping service. We offer local moving and international shipping at competitive rates, right from our store.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="bg-white border border-stone-200 p-6 sm:p-8 text-center hover:border-amber-500 transition-all duration-300">
+              <div className="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                <MapPin size={24} className="text-amber-600" />
+              </div>
+              <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-3">Shipping to Ghana</h3>
+              <p className="text-stone-500 text-sm leading-relaxed">Reliable door-to-door shipping from Minneapolis to cities across Ghana. Fast and affordable.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 sm:p-8 text-center hover:border-amber-500 transition-all duration-300">
+              <div className="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                <ShoppingCart size={24} className="text-amber-600" />
+              </div>
+              <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-3">Local Moving</h3>
+              <p className="text-stone-500 text-sm leading-relaxed">Need help moving locally in the Minneapolis area? We offer convenient local moving services.</p>
+            </div>
+            <div className="bg-white border border-stone-200 p-6 sm:p-8 text-center hover:border-amber-500 transition-all duration-300 sm:col-span-2 lg:col-span-1">
+              <div className="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                <Phone size={24} className="text-amber-600" />
+              </div>
+              <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-3">Get a Quote</h3>
+              <p className="text-stone-500 text-sm leading-relaxed mb-4">Contact us for shipping rates and schedules. We are happy to help with all your shipping needs.</p>
+              <a href="tel:+16128694117" className="inline-block text-amber-600 text-sm tracking-wider uppercase underline underline-offset-4 hover:text-amber-700 transition-colors">
+                Call (612) 869-4117
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Gallery */}
       <section className="py-6 sm:py-10 bg-stone-950">
         <div className="flex gap-2 sm:gap-4 overflow-hidden">
@@ -432,9 +475,9 @@ function App() {
               <div>
                 <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 text-amber-500">Contact</h3>
                 <div className="space-y-3">
-                  <a href="tel:+16125551234" className="flex items-center gap-3 text-stone-400 text-sm hover:text-amber-500 transition-colors">
-                    <Phone size={18} className="flex-shrink-0" />
-                    +1 (612) 555-1234
+                                    <a href="tel:+16128694117" className="flex items-center gap-3 text-stone-400 text-sm hover:text-amber-500 transition-colors">
+                                      <Phone size={18} className="flex-shrink-0" />
+                                      (612) 869-4117
                   </a>
                   <a href="mailto:info@adomafricanmarket.com" className="flex items-center gap-3 text-stone-400 text-sm hover:text-amber-500 transition-colors">
                     <Mail size={18} className="flex-shrink-0" />
@@ -508,7 +551,7 @@ function App() {
                 <p>1224 E 66th St</p>
                 <p>Minneapolis, MN 55423</p>
                 <a href="mailto:info@adomafricanmarket.com" className="block hover:text-amber-500 transition-colors">info@adomafricanmarket.com</a>
-                <a href="tel:+16125551234" className="block hover:text-amber-500 transition-colors">+1 (612) 555-1234</a>
+                <a href="tel:+16128694117" className="block hover:text-amber-500 transition-colors">(612) 869-4117</a>
               </div>
             </div>
             <div>
