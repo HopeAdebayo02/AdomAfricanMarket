@@ -56,25 +56,25 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             <a href="/" className="flex items-center gap-2">
-              <span className="text-xl sm:text-2xl font-bold tracking-widest text-amber-500">ADOM</span>
+              <span className="text-xl sm:text-2xl font-bold tracking-widest text-red-500">ADOM</span>
               <span className="text-xs sm:text-sm tracking-wider text-stone-300 hidden sm:block">AFRICAN MARKET</span>
             </a>
 
             <div className="hidden lg:flex items-center gap-8">
-              <a href="#home" className="text-sm tracking-wider hover:text-amber-500 transition-colors uppercase">Home</a>
-              <a href="#about" className="text-sm tracking-wider hover:text-amber-500 transition-colors uppercase">About</a>
-              <a href="#products" className="text-sm tracking-wider hover:text-amber-500 transition-colors uppercase">Products</a>
-              <a href="#menu" className="text-sm tracking-wider hover:text-amber-500 transition-colors uppercase">Menu</a>
-              <a href="#shipping" className="text-sm tracking-wider hover:text-amber-500 transition-colors uppercase">Gani Shipping</a>
-              <a href="#contact" className="text-sm tracking-wider hover:text-amber-500 transition-colors uppercase">Contact</a>
+              <a href="#home" className="text-sm tracking-wider hover:text-red-500 transition-colors uppercase">Home</a>
+              <a href="#about" className="text-sm tracking-wider hover:text-red-500 transition-colors uppercase">About</a>
+              <a href="#products" className="text-sm tracking-wider hover:text-red-500 transition-colors uppercase">Products</a>
+              <a href="#menu" className="text-sm tracking-wider hover:text-red-500 transition-colors uppercase">Menu</a>
+              <a href="#shipping" className="text-sm tracking-wider hover:text-red-500 transition-colors uppercase">Gani Shipping</a>
+              <a href="#contact" className="text-sm tracking-wider hover:text-red-500 transition-colors uppercase">Contact</a>
             </div>
 
             <div className="flex items-center gap-3 sm:gap-4">
-              <button className="relative p-2 hover:text-amber-500 transition-colors" aria-label="Cart">
+              <button className="relative p-2 hover:text-red-500 transition-colors" aria-label="Cart">
                 <ShoppingCart size={20} />
-                <span className="absolute -top-1 -right-1 bg-amber-600 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">0</span>
               </button>
-              <a href="#contact" className="hidden sm:inline-block border border-amber-500 text-amber-500 px-4 py-2 text-xs tracking-wider uppercase hover:bg-amber-500 hover:text-white transition-all">
+              <a href="#contact" className="hidden sm:inline-block border border-red-500 text-red-500 px-4 py-2 text-xs tracking-wider uppercase hover:bg-red-500 hover:text-white transition-all">
                 Visit Us
               </a>
               <button
@@ -91,12 +91,12 @@ function App() {
         {mobileMenuOpen && (
           <div className="lg:hidden bg-stone-900 border-t border-stone-800">
             <div className="px-4 py-4 space-y-3">
-              <a href="#home" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Home</a>
-              <a href="#about" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>About</a>
-              <a href="#products" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Products</a>
-              <a href="#menu" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Menu</a>
-              <a href="#shipping" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Gani Shipping</a>
-              <a href="#contact" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+              <a href="#home" className="block text-sm tracking-wider hover:text-red-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Home</a>
+              <a href="#about" className="block text-sm tracking-wider hover:text-red-500 uppercase" onClick={() => setMobileMenuOpen(false)}>About</a>
+              <a href="#products" className="block text-sm tracking-wider hover:text-red-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Products</a>
+              <a href="#menu" className="block text-sm tracking-wider hover:text-red-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Menu</a>
+              <a href="#shipping" className="block text-sm tracking-wider hover:text-red-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Gani Shipping</a>
+              <a href="#contact" className="block text-sm tracking-wider hover:text-red-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Contact</a>
             </div>
           </div>
         )}
@@ -110,13 +110,13 @@ function App() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-stone-950/60 via-stone-950/40 to-stone-950/80" />
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <p className="text-amber-500 text-sm sm:text-base tracking-widest mb-4 sm:mb-6 uppercase">Taste the Heart of Africa</p>
+          <p className="text-red-500 text-sm sm:text-base tracking-widest mb-4 sm:mb-6 uppercase">Taste the Heart of Africa</p>
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wide leading-tight mb-6 sm:mb-8" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             Fresh, Authentic, African
           </h1>
           <a
             href="#products"
-            className="inline-block border border-amber-500 text-amber-500 px-8 sm:px-12 py-3 sm:py-4 text-xs sm:text-sm tracking-widest uppercase hover:bg-amber-500 hover:text-white transition-all duration-300"
+            className="inline-block border border-red-500 text-red-500 px-8 sm:px-12 py-3 sm:py-4 text-xs sm:text-sm tracking-widest uppercase hover:bg-red-500 hover:text-white transition-all duration-300"
           >
             Shop Now
           </a>
@@ -136,14 +136,14 @@ function App() {
               />
             </div>
             <div>
-              <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">About Us</p>
+              <p className="text-red-600 text-xs sm:text-sm tracking-widest uppercase mb-3">About Us</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
                 The Taste of Africa, Right Here
               </h2>
               <p className="text-stone-600 leading-relaxed mb-8 text-sm sm:text-base">
                 At Adom African Market, we are passionate about bringing you the finest authentic African groceries and ingredients. From West African spices to East African grains, our carefully curated selection connects you to the rich culinary traditions of the continent.
               </p>
-              <a href="#contact" className="inline-block bg-amber-600 text-white px-6 sm:px-8 py-3 text-xs sm:text-sm tracking-widest uppercase hover:bg-amber-700 transition-colors">
+              <a href="#contact" className="inline-block bg-red-600 text-white px-6 sm:px-8 py-3 text-xs sm:text-sm tracking-widest uppercase hover:bg-red-700 transition-colors">
                 About Us
               </a>
 
@@ -173,13 +173,13 @@ function App() {
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-12">
             {categories.map((cat) => (
               <a key={cat.name} href="#products" className="flex items-center gap-3 sm:gap-4 group cursor-pointer">
-                <span className="text-xl sm:text-2xl lg:text-4xl font-light tracking-wider uppercase text-stone-800 group-hover:text-amber-600 transition-colors" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+                <span className="text-xl sm:text-2xl lg:text-4xl font-light tracking-wider uppercase text-stone-800 group-hover:text-red-600 transition-colors" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
                   {cat.name}
                 </span>
                 <img
                   src={cat.image}
                   alt={cat.name}
-                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-transparent group-hover:border-amber-500 transition-all"
+                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-transparent group-hover:border-red-500 transition-all"
                   onError={(e) => { (e.target as HTMLImageElement).src = "https://placehold.co/100x100/png" }}
                 />
               </a>
@@ -189,17 +189,17 @@ function App() {
       </section>
 
       {/* Popular Products Grid */}
-      <section id="products" className="py-16 sm:py-20 lg:py-28 bg-amber-50/50">
+      <section id="products" className="py-16 sm:py-20 lg:py-28 bg-red-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-14">
-            <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Our Products</p>
+            <p className="text-red-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Our Products</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
               Popular African Staples
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {products.map((product) => (
-              <div key={product.name} className="bg-white border border-stone-200 group hover:border-amber-500 transition-all duration-300">
+              <div key={product.name} className="bg-white border border-stone-200 group hover:border-red-500 transition-all duration-300">
                 <div className="p-4 sm:p-6 flex items-center justify-between">
                   <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase">{product.name}</h3>
                   <span className="text-stone-600 text-sm sm:text-base">$ {product.price.toFixed(2)} USD</span>
@@ -218,7 +218,7 @@ function App() {
                   </div>
                 </div>
                 <div className="p-3 sm:p-4">
-                  <button className="text-amber-600 text-xs tracking-wider uppercase underline underline-offset-4 hover:text-amber-700 transition-colors">
+                  <button className="text-red-600 text-xs tracking-wider uppercase underline underline-offset-4 hover:text-red-700 transition-colors">
                     Add to Cart
                   </button>
                 </div>
@@ -241,7 +241,7 @@ function App() {
           </h2>
           <a
             href="#contact"
-            className="inline-block bg-amber-600 text-white px-8 sm:px-12 py-3 sm:py-4 text-xs sm:text-sm tracking-widest uppercase hover:bg-amber-700 transition-colors"
+            className="inline-block bg-red-600 text-white px-8 sm:px-12 py-3 sm:py-4 text-xs sm:text-sm tracking-widest uppercase hover:bg-red-700 transition-colors"
           >
             Visit Our Store
           </a>
@@ -253,7 +253,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 sm:mb-14">
             <div>
-              <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Our Selection</p>
+              <p className="text-red-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Our Selection</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
                 The Best Products
               </h2>
@@ -263,7 +263,7 @@ function App() {
                 <button
                   key={tab}
                   onClick={() => setActiveMenuTab(tab)}
-                  className={`text-xs sm:text-sm tracking-wider uppercase transition-colors ${activeMenuTab === tab ? 'text-amber-600 underline underline-offset-4' : 'text-stone-500 hover:text-stone-800'}`}
+                  className={`text-xs sm:text-sm tracking-wider uppercase transition-colors ${activeMenuTab === tab ? 'text-red-600 underline underline-offset-4' : 'text-stone-500 hover:text-stone-800'}`}
                 >
                   {tab}
                 </button>
@@ -280,7 +280,7 @@ function App() {
                   onError={(e) => { (e.target as HTMLImageElement).src = "https://placehold.co/100x100/png" }}
                 />
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase group-hover:text-amber-600 transition-colors">{item.name}</h3>
+                  <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase group-hover:text-red-600 transition-colors">{item.name}</h3>
                   <p className="text-stone-500 text-xs sm:text-sm mt-1 truncate">{item.desc}</p>
                 </div>
                 <span className="text-stone-700 text-sm sm:text-base font-medium flex-shrink-0">$ {item.price.toFixed(2)} USD</span>
@@ -291,10 +291,10 @@ function App() {
       </section>
 
       {/* Gani Shipping */}
-      <section id="shipping" className="py-16 sm:py-20 lg:py-28 bg-amber-50/50">
+      <section id="shipping" className="py-16 sm:py-20 lg:py-28 bg-red-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-14">
-            <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Gani Shipping</p>
+            <p className="text-red-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Gani Shipping</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
               Ship to Ghana
             </h2>
@@ -303,27 +303,27 @@ function App() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="bg-white border border-stone-200 p-6 sm:p-8 text-center hover:border-amber-500 transition-all duration-300">
-              <div className="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5">
-                <MapPin size={24} className="text-amber-600" />
+            <div className="bg-white border border-stone-200 p-6 sm:p-8 text-center hover:border-red-500 transition-all duration-300">
+              <div className="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                <MapPin size={24} className="text-red-600" />
               </div>
               <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-3">Shipping to Ghana</h3>
               <p className="text-stone-500 text-sm leading-relaxed">Reliable door-to-door shipping from Minneapolis to cities across Ghana. We exclusively ship to Ghana — fast and affordable.</p>
             </div>
-            <div className="bg-white border border-stone-200 p-6 sm:p-8 text-center hover:border-amber-500 transition-all duration-300">
-              <div className="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5">
-                <ShoppingCart size={24} className="text-amber-600" />
+            <div className="bg-white border border-stone-200 p-6 sm:p-8 text-center hover:border-red-500 transition-all duration-300">
+              <div className="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                <ShoppingCart size={24} className="text-red-600" />
               </div>
               <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-3">Local Moving</h3>
               <p className="text-stone-500 text-sm leading-relaxed">Need help moving locally in the Minneapolis area? We offer convenient local moving services.</p>
             </div>
-            <div className="bg-white border border-stone-200 p-6 sm:p-8 text-center hover:border-amber-500 transition-all duration-300 sm:col-span-2 lg:col-span-1">
-              <div className="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5">
-                <Phone size={24} className="text-amber-600" />
+            <div className="bg-white border border-stone-200 p-6 sm:p-8 text-center hover:border-red-500 transition-all duration-300 sm:col-span-2 lg:col-span-1">
+              <div className="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                <Phone size={24} className="text-red-600" />
               </div>
               <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-3">Get a Quote</h3>
               <p className="text-stone-500 text-sm leading-relaxed mb-4">Contact us for shipping rates and schedules. We are happy to help with all your shipping needs.</p>
-              <a href="tel:+16128694117" className="inline-block text-amber-600 text-sm tracking-wider uppercase underline underline-offset-4 hover:text-amber-700 transition-colors">
+              <a href="tel:+16128694117" className="inline-block text-red-600 text-sm tracking-wider uppercase underline underline-offset-4 hover:text-red-700 transition-colors">
                 Call (612) 869-4117
               </a>
             </div>
@@ -349,14 +349,14 @@ function App() {
       {/* Testimonials */}
       <section className="py-16 sm:py-20 lg:py-28 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Testimonials</p>
+          <p className="text-red-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Testimonials</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-10 sm:mb-14" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             What Our Customers Say
           </h2>
           <div className="relative">
             <div className="flex items-center justify-center gap-1 mb-4 sm:mb-6">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={16} className="text-amber-500 fill-amber-500" />
+                <Star key={i} size={16} className="text-red-500 fill-red-500" />
               ))}
             </div>
             <blockquote className="text-base sm:text-lg lg:text-xl text-stone-600 leading-relaxed italic mb-6 sm:mb-8 max-w-2xl mx-auto">
@@ -367,14 +367,14 @@ function App() {
             <div className="flex items-center justify-center gap-4 mt-6 sm:mt-8">
               <button
                 onClick={prevTestimonial}
-                className="w-10 h-10 sm:w-12 sm:h-12 border border-stone-300 flex items-center justify-center hover:border-amber-500 hover:text-amber-500 transition-colors"
+                className="w-10 h-10 sm:w-12 sm:h-12 border border-stone-300 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-colors"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft size={18} />
               </button>
               <button
                 onClick={nextTestimonial}
-                className="w-10 h-10 sm:w-12 sm:h-12 border border-stone-300 flex items-center justify-center hover:border-amber-500 hover:text-amber-500 transition-colors"
+                className="w-10 h-10 sm:w-12 sm:h-12 border border-stone-300 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-colors"
                 aria-label="Next testimonial"
               >
                 <ChevronRight size={18} />
@@ -389,12 +389,12 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10 sm:mb-14">
             <div>
-              <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Our Blog</p>
+              <p className="text-red-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Our Blog</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
                 From Our Kitchen
               </h2>
             </div>
-            <a href="#" className="text-amber-600 text-xs sm:text-sm tracking-wider uppercase underline underline-offset-4 hover:text-amber-700 mt-4 sm:mt-0">
+            <a href="#" className="text-red-600 text-xs sm:text-sm tracking-wider uppercase underline underline-offset-4 hover:text-red-700 mt-4 sm:mt-0">
               More Articles
             </a>
           </div>
@@ -410,7 +410,7 @@ function App() {
                   />
                 </div>
                 <p className="text-stone-500 text-xs sm:text-sm mb-2">{post.date} | {post.category}</p>
-                <h3 className="text-base sm:text-lg font-medium group-hover:text-amber-600 transition-colors leading-snug">{post.title}</h3>
+                <h3 className="text-base sm:text-lg font-medium group-hover:text-red-600 transition-colors leading-snug">{post.title}</h3>
               </article>
             ))}
           </div>
@@ -422,7 +422,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
-              <p className="text-amber-500 text-xs sm:text-sm tracking-widest uppercase mb-3">Get In Touch</p>
+              <p className="text-red-500 text-xs sm:text-sm tracking-widest uppercase mb-3">Get In Touch</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-8 sm:mb-10" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
                 Visit Our Store!
               </h2>
@@ -431,34 +431,34 @@ function App() {
                   <input
                     type="text"
                     placeholder="Your name"
-                    className="bg-transparent border border-stone-700 px-4 py-3 text-sm placeholder-stone-500 focus:border-amber-500 focus:outline-none transition-colors w-full"
+                    className="bg-transparent border border-stone-700 px-4 py-3 text-sm placeholder-stone-500 focus:border-red-500 focus:outline-none transition-colors w-full"
                   />
                   <input
                     type="tel"
                     placeholder="Phone number"
-                    className="bg-transparent border border-stone-700 px-4 py-3 text-sm placeholder-stone-500 focus:border-amber-500 focus:outline-none transition-colors w-full"
+                    className="bg-transparent border border-stone-700 px-4 py-3 text-sm placeholder-stone-500 focus:border-red-500 focus:outline-none transition-colors w-full"
                   />
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                   <input
                     type="email"
                     placeholder="Your email"
-                    className="bg-transparent border border-stone-700 px-4 py-3 text-sm placeholder-stone-500 focus:border-amber-500 focus:outline-none transition-colors w-full"
+                    className="bg-transparent border border-stone-700 px-4 py-3 text-sm placeholder-stone-500 focus:border-red-500 focus:outline-none transition-colors w-full"
                   />
                   <input
                     type="text"
                     placeholder="Subject"
-                    className="bg-transparent border border-stone-700 px-4 py-3 text-sm placeholder-stone-500 focus:border-amber-500 focus:outline-none transition-colors w-full"
+                    className="bg-transparent border border-stone-700 px-4 py-3 text-sm placeholder-stone-500 focus:border-red-500 focus:outline-none transition-colors w-full"
                   />
                 </div>
                 <textarea
                   placeholder="Your message"
                   rows={4}
-                  className="bg-transparent border border-stone-700 px-4 py-3 text-sm placeholder-stone-500 focus:border-amber-500 focus:outline-none transition-colors w-full resize-none"
+                  className="bg-transparent border border-stone-700 px-4 py-3 text-sm placeholder-stone-500 focus:border-red-500 focus:outline-none transition-colors w-full resize-none"
                 />
                 <button
                   type="submit"
-                  className="bg-amber-600 text-white px-8 sm:px-10 py-3 text-xs sm:text-sm tracking-widest uppercase hover:bg-amber-700 transition-colors"
+                  className="bg-red-600 text-white px-8 sm:px-10 py-3 text-xs sm:text-sm tracking-widest uppercase hover:bg-red-700 transition-colors"
                 >
                   Send Message
                 </button>
@@ -466,27 +466,27 @@ function App() {
             </div>
             <div className="space-y-8 sm:space-y-10 lg:pl-8">
               <div>
-                <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 text-amber-500">Visit Us</h3>
+                <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 text-red-500">Visit Us</h3>
                 <div className="flex items-start gap-3 text-stone-400 text-sm">
                   <MapPin size={18} className="flex-shrink-0 mt-0.5" />
                   <p>1224 E 66th St<br />Minneapolis, MN 55423</p>
                 </div>
               </div>
               <div>
-                <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 text-amber-500">Contact</h3>
+                <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 text-red-500">Contact</h3>
                 <div className="space-y-3">
-                                    <a href="tel:+16128694117" className="flex items-center gap-3 text-stone-400 text-sm hover:text-amber-500 transition-colors">
+                                    <a href="tel:+16128694117" className="flex items-center gap-3 text-stone-400 text-sm hover:text-red-500 transition-colors">
                                       <Phone size={18} className="flex-shrink-0" />
                                       (612) 869-4117
                   </a>
-                  <a href="mailto:info@adomafricanmarket.com" className="flex items-center gap-3 text-stone-400 text-sm hover:text-amber-500 transition-colors">
+                  <a href="mailto:info@adomafricanmarket.com" className="flex items-center gap-3 text-stone-400 text-sm hover:text-red-500 transition-colors">
                     <Mail size={18} className="flex-shrink-0" />
                     info@adomafricanmarket.com
                   </a>
                 </div>
               </div>
               <div>
-                <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 text-amber-500">Store Hours</h3>
+                <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 text-red-500">Store Hours</h3>
                 <div className="flex items-start gap-3 text-stone-400 text-sm">
                   <Clock size={18} className="flex-shrink-0 mt-0.5" />
                   <div>
@@ -496,16 +496,16 @@ function App() {
                 </div>
               </div>
               <div className="flex gap-4 pt-2">
-                <a href="#" className="w-10 h-10 border border-stone-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-500 transition-colors" aria-label="Facebook">
+                <a href="#" className="w-10 h-10 border border-stone-700 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-colors" aria-label="Facebook">
                   <Facebook size={16} />
                 </a>
-                <a href="#" className="w-10 h-10 border border-stone-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-500 transition-colors" aria-label="Twitter">
+                <a href="#" className="w-10 h-10 border border-stone-700 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-colors" aria-label="Twitter">
                   <Twitter size={16} />
                 </a>
-                <a href="#" className="w-10 h-10 border border-stone-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-500 transition-colors" aria-label="Instagram">
+                <a href="#" className="w-10 h-10 border border-stone-700 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-colors" aria-label="Instagram">
                   <Instagram size={16} />
                 </a>
-                <a href="#" className="w-10 h-10 border border-stone-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-500 transition-colors" aria-label="LinkedIn">
+                <a href="#" className="w-10 h-10 border border-stone-700 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-colors" aria-label="LinkedIn">
                   <Linkedin size={16} />
                 </a>
               </div>
@@ -519,7 +519,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             <div className="sm:col-span-2 lg:col-span-1">
-              <h2 className="text-xl sm:text-2xl font-bold tracking-widest text-amber-500 mb-4">ADOM</h2>
+              <h2 className="text-xl sm:text-2xl font-bold tracking-widest text-red-500 mb-4">ADOM</h2>
               <p className="text-stone-400 text-sm leading-relaxed mb-6">
                 Your trusted source for authentic African groceries, spices, and ingredients. Bringing the flavors of home to your kitchen.
               </p>
@@ -528,9 +528,9 @@ function App() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="bg-transparent border border-stone-700 px-4 py-2.5 text-sm placeholder-stone-500 focus:border-amber-500 focus:outline-none transition-colors flex-1"
+                  className="bg-transparent border border-stone-700 px-4 py-2.5 text-sm placeholder-stone-500 focus:border-red-500 focus:outline-none transition-colors flex-1"
                 />
-                <button type="submit" className="bg-amber-600 px-4 sm:px-6 py-2.5 text-xs tracking-wider uppercase hover:bg-amber-700 transition-colors">
+                <button type="submit" className="bg-red-600 px-4 sm:px-6 py-2.5 text-xs tracking-wider uppercase hover:bg-red-700 transition-colors">
                   Subscribe
                 </button>
               </form>
@@ -538,11 +538,11 @@ function App() {
             <div>
               <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 sm:mb-6">Quick Links</h3>
               <ul className="space-y-2 sm:space-y-3">
-                <li><a href="#home" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Home</a></li>
-                <li><a href="#about" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">About Us</a></li>
-                <li><a href="#products" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Products</a></li>
-                <li><a href="#menu" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Menu</a></li>
-                <li><a href="#contact" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Contact</a></li>
+                <li><a href="#home" className="text-stone-400 text-sm hover:text-red-500 transition-colors">Home</a></li>
+                <li><a href="#about" className="text-stone-400 text-sm hover:text-red-500 transition-colors">About Us</a></li>
+                <li><a href="#products" className="text-stone-400 text-sm hover:text-red-500 transition-colors">Products</a></li>
+                <li><a href="#menu" className="text-stone-400 text-sm hover:text-red-500 transition-colors">Menu</a></li>
+                <li><a href="#contact" className="text-stone-400 text-sm hover:text-red-500 transition-colors">Contact</a></li>
               </ul>
             </div>
             <div>
@@ -550,8 +550,8 @@ function App() {
               <div className="space-y-3 text-stone-400 text-sm">
                 <p>1224 E 66th St</p>
                 <p>Minneapolis, MN 55423</p>
-                <a href="mailto:info@adomafricanmarket.com" className="block hover:text-amber-500 transition-colors">info@adomafricanmarket.com</a>
-                <a href="tel:+16128694117" className="block hover:text-amber-500 transition-colors">(612) 869-4117</a>
+                <a href="mailto:info@adomafricanmarket.com" className="block hover:text-red-500 transition-colors">info@adomafricanmarket.com</a>
+                <a href="tel:+16128694117" className="block hover:text-red-500 transition-colors">(612) 869-4117</a>
               </div>
             </div>
             <div>
@@ -561,16 +561,16 @@ function App() {
                 <p>Sunday: 1:30 - 5 PM</p>
               </div>
               <div className="flex gap-3 mt-6">
-                <a href="#" className="w-8 h-8 border border-stone-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-500 transition-colors" aria-label="Facebook">
+                <a href="#" className="w-8 h-8 border border-stone-700 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-colors" aria-label="Facebook">
                   <Facebook size={14} />
                 </a>
-                <a href="#" className="w-8 h-8 border border-stone-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-500 transition-colors" aria-label="Twitter">
+                <a href="#" className="w-8 h-8 border border-stone-700 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-colors" aria-label="Twitter">
                   <Twitter size={14} />
                 </a>
-                <a href="#" className="w-8 h-8 border border-stone-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-500 transition-colors" aria-label="Instagram">
+                <a href="#" className="w-8 h-8 border border-stone-700 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-colors" aria-label="Instagram">
                   <Instagram size={14} />
                 </a>
-                <a href="#" className="w-8 h-8 border border-stone-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-500 transition-colors" aria-label="LinkedIn">
+                <a href="#" className="w-8 h-8 border border-stone-700 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-colors" aria-label="LinkedIn">
                   <Linkedin size={14} />
                 </a>
               </div>
@@ -578,7 +578,7 @@ function App() {
           </div>
           <div className="border-t border-stone-800 mt-10 sm:mt-12 pt-6 sm:pt-8 text-center">
             <p className="text-stone-500 text-xs sm:text-sm">
-              Copyright &copy; {new Date().getFullYear()} <a href="/" className="hover:text-amber-500 transition-colors">Adom African Market</a>. All rights reserved.
+              Copyright &copy; {new Date().getFullYear()} <a href="/" className="hover:text-red-500 transition-colors">Adom African Market</a>. All rights reserved.
             </p>
           </div>
         </div>
