@@ -20,10 +20,22 @@ const menuItems = [
   { name: "Ogbono Seeds", desc: "Wild mango seeds for thick, draw soups", price: 14.99, image: "/images/spices.jpg" },
 ]
 
+const freshProduce = [
+  { name: "Fresh Okro", price: 4.99, unit: "per lb", image: "/images/okro.jpg" },
+  { name: "Yellow Plantain", price: 1.29, unit: "per lb", image: "/images/plantain.jpg" },
+  { name: "Green Plantain", price: 1.59, unit: "per lb", image: "/images/plantain.jpg" },
+  { name: "Ginger", price: 3.99, unit: "per lb", image: "/images/ginger.jpg" },
+  { name: "Coco Yam", price: 2.99, unit: "per lb", image: "/images/yam.jpg" },
+  { name: "Yellow Onion", price: 0.89, unit: "per lb", image: "/images/onion.jpg" },
+  { name: "Sweet Potato", price: 2.99, unit: "per lb", image: "/images/yam.jpg" },
+  { name: "Cassava", price: 1.99, unit: "each", image: "/images/cassava.jpg" },
+]
+
 const categories = [
   { name: "Grains & Flours", image: "/images/grains.jpg" },
   { name: "Spices & Seasonings", image: "/images/spices.jpg" },
   { name: "Oils & Sauces", image: "/images/palm-oil.jpg" },
+  { name: "Fresh Produce", image: "/images/plantain.jpg" },
   { name: "Snacks", image: "/images/plantain.jpg" },
   { name: "Dried Foods", image: "/images/cassava.jpg" },
 ]
@@ -221,6 +233,37 @@ function App() {
                   <button className="text-amber-600 text-xs tracking-wider uppercase underline underline-offset-4 hover:text-amber-700 transition-colors">
                     Add to Cart
                   </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Fresh Produce Section */}
+      <section id="fresh-produce" className="py-16 sm:py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Fresh Produce</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+              Farm Fresh, Straight to You
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {freshProduce.map((item) => (
+              <div key={item.name} className="bg-white border border-stone-200 group hover:border-amber-500 transition-all duration-300 text-center">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => { (e.target as HTMLImageElement).src = "https://placehold.co/400x300/png" }}
+                  />
+                </div>
+                <div className="p-4 sm:p-5">
+                  <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-2">{item.name}</h3>
+                  <p className="text-amber-600 text-sm sm:text-base font-medium">$ {item.price.toFixed(2)} USD</p>
+                  <p className="text-stone-500 text-xs mt-1">{item.unit}</p>
                 </div>
               </div>
             ))}
