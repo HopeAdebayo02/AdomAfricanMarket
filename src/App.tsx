@@ -324,6 +324,7 @@ function App() {
               </div>
             ))}
           </div>
+          <p className="text-stone-500 text-xs sm:text-sm text-center mt-6 italic">Prices subject to change. Fresh meat and seafood are sold by weight.</p>
         </div>
       </section>
 
