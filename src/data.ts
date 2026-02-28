@@ -51,14 +51,10 @@ export const riceGrains = [
 ]
 
 export const categories = [
-  { name: "Grains & Flours", image: "/images/grains.jpg" },
-  { name: "Spices & Seasonings", image: "/images/spices.jpg" },
   { name: "Oils & Cooking", image: "/images/palm-oil.jpg" },
   { name: "Fresh Produce", image: "/images/plantain.jpg" },
   { name: "Meat & Seafood", image: "/images/snapper.jpg" },
   { name: "Rice & Grains", image: "/images/grains.jpg" },
-  { name: "Snacks", image: "/images/plantain.jpg" },
-  { name: "Dried Foods", image: "/images/cassava.jpg" },
 ]
 
 export const testimonials = [
