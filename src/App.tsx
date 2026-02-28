@@ -20,10 +20,47 @@ const menuItems = [
   { name: "Ogbono Seeds", desc: "Wild mango seeds for thick, draw soups", price: 14.99, image: "/images/spices.jpg" },
 ]
 
+const freshProduce = [
+  { name: "Fresh Okro", price: 4.99, unit: "per lb", image: "/images/okro.jpg" },
+  { name: "Yellow Plantain", price: 1.29, unit: "per lb", image: "/images/plantain.jpg" },
+  { name: "Green Plantain", price: 1.59, unit: "per lb", image: "/images/plantain.jpg" },
+  { name: "Ginger", price: 3.99, unit: "per lb", image: "/images/ginger.jpg" },
+  { name: "Coco Yam", price: 2.99, unit: "per lb", image: "/images/yam.jpg" },
+  { name: "Yellow Onion", price: 0.89, unit: "per lb", image: "/images/onion.jpg" },
+  { name: "Sweet Potato", price: 2.99, unit: "per lb", image: "/images/yam.jpg" },
+  { name: "Cassava", price: 1.99, unit: "each", image: "/images/cassava.jpg" },
+]
+
+const meatSeafood = [
+  { name: "Red Snapper", price: 9.99, unit: "per lb", image: "/images/snapper.jpg" },
+  { name: "Tilapia", price: 3.50, unit: "per lb", image: "/images/tilapia.jpg" },
+  { name: "Fresh Shrimp", price: 16.99, unit: "per lb", image: "/images/shrimp.jpg" },
+  { name: "Goat (Half \u2013 21\u201322 lbs)", price: 75.00, unit: "bulk", image: "/images/goat.jpg" },
+  { name: "Goat (Quarter \u2013 10\u201311 lbs)", price: 37.50, unit: "bulk", image: "/images/goat.jpg" },
+]
+
+const oilsCooking = [
+  { name: "Ayaba Palm Oil", price: 8.99, unit: "bottle", image: "/images/palm-oil.jpg" },
+  { name: "Vahnos Oil 500ml", price: 5.99, unit: "bottle", image: "/images/palm-oil.jpg" },
+  { name: "Vahnos Oil 2L", price: 15.99, unit: "bottle", image: "/images/palm-oil.jpg" },
+  { name: "Vahnos Oil 4.5L", price: 28.99, unit: "bottle", image: "/images/palm-oil.jpg" },
+  { name: "Shea Butter", price: 10.99, unit: "container", image: "/images/palm-oil.jpg" },
+]
+
+const riceGrains = [
+  { name: "Parboiled Rice (25 lb bag)", price: 19.99, unit: "each", image: "/images/grains.jpg" },
+  { name: "Jasmine Rice (25 lb bag)", price: 25.99, unit: "each", image: "/images/grains.jpg" },
+  { name: "Jasmine Rice (35 lb bag)", price: 39.99, unit: "each", image: "/images/grains.jpg" },
+  { name: "Ijebu Garri", price: 15.99, unit: "bag", image: "/images/cassava.jpg" },
+]
+
 const categories = [
   { name: "Grains & Flours", image: "/images/grains.jpg" },
   { name: "Spices & Seasonings", image: "/images/spices.jpg" },
-  { name: "Oils & Sauces", image: "/images/palm-oil.jpg" },
+  { name: "Oils & Cooking", image: "/images/palm-oil.jpg" },
+  { name: "Fresh Produce", image: "/images/plantain.jpg" },
+  { name: "Meat & Seafood", image: "/images/snapper.jpg" },
+  { name: "Rice & Grains", image: "/images/grains.jpg" },
   { name: "Snacks", image: "/images/plantain.jpg" },
   { name: "Dried Foods", image: "/images/cassava.jpg" },
 ]
@@ -221,6 +258,131 @@ function App() {
                   <button className="text-amber-600 text-xs tracking-wider uppercase underline underline-offset-4 hover:text-amber-700 transition-colors">
                     Add to Cart
                   </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Fresh Produce Section */}
+      <section id="fresh-produce" className="py-16 sm:py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Fresh Produce</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+              Farm Fresh, Straight to You
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {freshProduce.map((item) => (
+              <div key={item.name} className="bg-white border border-stone-200 group hover:border-amber-500 transition-all duration-300 text-center">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => { (e.target as HTMLImageElement).src = "https://placehold.co/400x300/png" }}
+                  />
+                </div>
+                <div className="p-4 sm:p-5">
+                  <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-2">{item.name}</h3>
+                  <p className="text-amber-600 text-sm sm:text-base font-medium">$ {item.price.toFixed(2)} USD</p>
+                  <p className="text-stone-500 text-xs mt-1">{item.unit}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Meat & Seafood Section */}
+      <section id="meat-seafood" className="py-16 sm:py-20 lg:py-28 bg-amber-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Meat & Seafood</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+              Meat & Seafood
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {meatSeafood.map((item) => (
+              <div key={item.name} className="bg-white border border-stone-200 group hover:border-amber-500 transition-all duration-300 text-center">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => { (e.target as HTMLImageElement).src = "https://placehold.co/400x300/png" }}
+                  />
+                </div>
+                <div className="p-4 sm:p-5">
+                  <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-2">{item.name}</h3>
+                  <p className="text-amber-600 text-sm sm:text-base font-medium">$ {item.price.toFixed(2)} USD</p>
+                  <p className="text-stone-500 text-xs mt-1">{item.unit}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-stone-500 text-xs sm:text-sm text-center mt-6 italic">Prices subject to change. Fresh meat and seafood are sold by weight.</p>
+        </div>
+      </section>
+
+      {/* Oils & Cooking Section */}
+      <section id="oils-cooking" className="py-16 sm:py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Oils & Cooking</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+              Oils & Cooking
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {oilsCooking.map((item) => (
+              <div key={item.name} className="bg-white border border-stone-200 group hover:border-amber-500 transition-all duration-300 text-center">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => { (e.target as HTMLImageElement).src = "https://placehold.co/400x300/png" }}
+                  />
+                </div>
+                <div className="p-4 sm:p-5">
+                  <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-2">{item.name}</h3>
+                  <p className="text-amber-600 text-sm sm:text-base font-medium">$ {item.price.toFixed(2)} USD</p>
+                  <p className="text-stone-500 text-xs mt-1">{item.unit}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Rice & Grains Section */}
+      <section id="rice-grains" className="py-16 sm:py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Rice & Grains</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+              Rice & Grains
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {riceGrains.map((item) => (
+              <div key={item.name} className="bg-white border border-stone-200 group hover:border-amber-500 transition-all duration-300 text-center">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => { (e.target as HTMLImageElement).src = "https://placehold.co/400x300/png" }}
+                  />
+                </div>
+                <div className="p-4 sm:p-5">
+                  <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-2">{item.name}</h3>
+                  <p className="text-amber-600 text-sm sm:text-base font-medium">$ {item.price.toFixed(2)} USD</p>
+                  <p className="text-stone-500 text-xs mt-1">{item.unit}</p>
                 </div>
               </div>
             ))}
