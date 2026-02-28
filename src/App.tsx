@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ShoppingCart, Menu, X, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import './App.css'
@@ -6,6 +6,10 @@ import './App.css'
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
 
   const isActive = (path: string) => location.pathname === path
 
