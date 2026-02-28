@@ -286,7 +286,7 @@ function App() {
           <div className="text-center mb-10 sm:mb-14">
             <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Meat & Seafood</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-              Premium Cuts & Fresh Catches
+              Meat & Seafood
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
