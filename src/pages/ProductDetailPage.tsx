@@ -6,9 +6,10 @@ import type { Product } from '../data'
 
 const categoryLabels: Record<Product["category"], string> = {
   "fresh-produce": "Fresh Produce",
-  "meat-seafood": "Meat & Seafood",
+  "meat-seafood": "Fresh Meat & Seafood",
   "oils-cooking": "Oils & Cooking",
   "rice-grains": "Rice & Grains",
+  "pantry-packaged": "Pantry / Packaged Foods",
 }
 
 function ProductDetailPage() {
