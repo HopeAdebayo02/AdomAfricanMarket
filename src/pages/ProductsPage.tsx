@@ -1,6 +1,23 @@
 import { categories, products, freshProduce, meatSeafood, oilsCooking, riceGrains } from '../data'
 
+const categoryIdMap: Record<string, string> = {
+  "Oils & Cooking": "oils-cooking",
+  "Fresh Produce": "fresh-produce",
+  "Meat & Seafood": "meat-seafood",
+  "Rice & Grains": "rice-grains",
+}
+
 function ProductsPage() {
+  const scrollToSection = (name: string) => {
+    const id = categoryIdMap[name]
+    if (id) {
+      const el = document.getElementById(id)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
+
   return (
     <div className="pt-16 sm:pt-20">
       {/* Categories Section */}
@@ -8,7 +25,7 @@ function ProductsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-12">
             {categories.map((cat) => (
-              <div key={cat.name} className="flex items-center gap-3 sm:gap-4 group cursor-pointer">
+              <div key={cat.name} className="flex items-center gap-3 sm:gap-4 group cursor-pointer" onClick={() => scrollToSection(cat.name)}>
                 <span className="text-xl sm:text-2xl lg:text-4xl font-light tracking-wider uppercase text-stone-800 group-hover:text-amber-600 transition-colors" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
                   {cat.name}
                 </span>
