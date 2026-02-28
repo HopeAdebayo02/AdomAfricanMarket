@@ -28,7 +28,7 @@ function MeatSeafoodPage() {
   const allItems = getProductsByCategory('meat-seafood')
 
   useEffect(() => {
-    document.title = 'Meat & Seafood - Adom African Market Minneapolis'
+    document.title = 'Fresh Meat & Seafood - Adom African Market Minneapolis'
     const metaDesc = document.querySelector('meta[name="description"]')
     if (metaDesc) {
       metaDesc.setAttribute('content', 'Browse all meat and seafood at Adom African Market in Minneapolis. Fresh fish, shrimp, goat, and more.')
@@ -47,7 +47,7 @@ function MeatSeafoodPage() {
             <span>/</span>
             <Link to="/products" className="hover:text-amber-600 transition-colors">Products</Link>
             <span>/</span>
-            <span className="text-stone-800">Meat & Seafood</span>
+            <span className="text-stone-800">Fresh Meat & Seafood</span>
           </nav>
         </div>
       </div>
@@ -55,13 +55,13 @@ function MeatSeafoodPage() {
       <section className="py-16 sm:py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-14">
-            <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Meat & Seafood</p>
+            <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Fresh Meat & Seafood</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-              All Meat & Seafood
+              All Fresh Meat & Seafood
             </h1>
             <p className="text-stone-500 text-sm mt-4">{allItems.length} items available</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {allItems.map((item) => (
               <ProductCard key={item.slug} item={item} />
             ))}
