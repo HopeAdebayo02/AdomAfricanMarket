@@ -24,12 +24,12 @@ function ProductCard({ item }: { item: Product }) {
   )
 }
 
-function CategorySection({ categorySlug, title, subtitle, bgClass, gridCols, disclaimer }: { categorySlug: Product["category"]; title: string; subtitle: string; bgClass: string; gridCols: string; disclaimer?: string }) {
+function CategorySection({ categorySlug, title, subtitle, bgClass, gridCols, disclaimer, seeAllLink }: { categorySlug: Product["category"]; title: string; subtitle: string; bgClass: string; gridCols: string; disclaimer?: string; seeAllLink?: string }) {
   const [showAll, setShowAll] = useState(false)
   const featured = getFeaturedByCategory(categorySlug)
   const all = getProductsByCategory(categorySlug)
   const hasMore = all.length > featured.length
-  const items = showAll ? all : featured
+  const items = seeAllLink ? featured : (showAll ? all : featured)
 
   return (
     <section id={categorySlug} className={`py-16 sm:py-20 lg:py-28 scroll-mt-24 ${bgClass}`}>
@@ -48,7 +48,17 @@ function CategorySection({ categorySlug, title, subtitle, bgClass, gridCols, dis
         {disclaimer && (
           <p className="text-stone-500 text-xs sm:text-sm text-center mt-6 italic">{disclaimer}</p>
         )}
-        {hasMore && (
+        {seeAllLink && hasMore && (
+          <div className="text-center mt-8">
+            <Link
+              to={seeAllLink}
+              className="inline-flex items-center gap-2 border border-amber-500 text-amber-600 px-6 py-2.5 text-xs tracking-wider uppercase hover:bg-amber-500 hover:text-white transition-all duration-300"
+            >
+              See All Fresh Produce ({all.length})
+            </Link>
+          </div>
+        )}
+        {!seeAllLink && hasMore && (
           <div className="text-center mt-8">
             <button
               onClick={() => setShowAll(!showAll)}
@@ -184,7 +194,7 @@ function ProductsPage() {
             </div>
           </section>
 
-          <CategorySection categorySlug="fresh-produce" title="Farm Fresh, Straight to You" subtitle="Fresh Produce" bgClass="bg-white" gridCols="sm:grid-cols-2 lg:grid-cols-4" />
+          <CategorySection categorySlug="fresh-produce" title="Farm Fresh, Straight to You" subtitle="Fresh Produce" bgClass="bg-white" gridCols="sm:grid-cols-2 lg:grid-cols-4" seeAllLink="/fresh-produce" />
           <CategorySection categorySlug="meat-seafood" title="Meat & Seafood" subtitle="Meat & Seafood" bgClass="bg-amber-50/50" gridCols="sm:grid-cols-2 lg:grid-cols-3" disclaimer="Prices subject to change. Fresh meat and seafood are sold by weight." />
           <CategorySection categorySlug="oils-cooking" title="Oils & Cooking" subtitle="Oils & Cooking" bgClass="bg-white" gridCols="sm:grid-cols-2 lg:grid-cols-3" />
           <CategorySection categorySlug="rice-grains" title="Rice & Grains" subtitle="Rice & Grains" bgClass="bg-amber-50/50" gridCols="sm:grid-cols-2 lg:grid-cols-4" />

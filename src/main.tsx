@@ -9,6 +9,7 @@ import MenuPage from './pages/MenuPage.tsx'
 import ShippingPage from './pages/ShippingPage.tsx'
 import ContactPage from './pages/ContactPage.tsx'
 import ProductDetailPage from './pages/ProductDetailPage.tsx'
+import FreshProducePage from './pages/FreshProducePage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/shipping" element={<ShippingPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/product/:slug" element={<ProductDetailPage />} />
+          <Route path="/fresh-produce" element={<FreshProducePage />} />
         </Route>
       </Routes>
     </HashRouter>
