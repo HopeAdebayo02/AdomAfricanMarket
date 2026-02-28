@@ -39,6 +39,14 @@ const meatSeafood = [
   { name: "Goat (Quarter \u2013 10\u201311 lbs)", price: 37.50, unit: "bulk", image: "/images/goat.jpg" },
 ]
 
+const oilsCooking = [
+  { name: "Ayaba Palm Oil", price: 8.99, unit: "bottle", image: "/images/palm-oil.jpg" },
+  { name: "Vahnos Oil 500ml", price: 5.99, unit: "bottle", image: "/images/palm-oil.jpg" },
+  { name: "Vahnos Oil 2L", price: 15.99, unit: "bottle", image: "/images/palm-oil.jpg" },
+  { name: "Vahnos Oil 4.5L", price: 28.99, unit: "bottle", image: "/images/palm-oil.jpg" },
+  { name: "Shea Butter", price: 10.99, unit: "container", image: "/images/palm-oil.jpg" },
+]
+
 const riceGrains = [
   { name: "Parboiled Rice (25 lb bag)", price: 19.99, unit: "each", image: "/images/grains.jpg" },
   { name: "Jasmine Rice (25 lb bag)", price: 25.99, unit: "each", image: "/images/grains.jpg" },
@@ -49,7 +57,7 @@ const riceGrains = [
 const categories = [
   { name: "Grains & Flours", image: "/images/grains.jpg" },
   { name: "Spices & Seasonings", image: "/images/spices.jpg" },
-  { name: "Oils & Sauces", image: "/images/palm-oil.jpg" },
+  { name: "Oils & Cooking", image: "/images/palm-oil.jpg" },
   { name: "Fresh Produce", image: "/images/plantain.jpg" },
   { name: "Meat & Seafood", image: "/images/snapper.jpg" },
   { name: "Rice & Grains", image: "/images/grains.jpg" },
@@ -299,6 +307,37 @@ function App() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {meatSeafood.map((item) => (
+              <div key={item.name} className="bg-white border border-stone-200 group hover:border-amber-500 transition-all duration-300 text-center">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => { (e.target as HTMLImageElement).src = "https://placehold.co/400x300/png" }}
+                  />
+                </div>
+                <div className="p-4 sm:p-5">
+                  <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-2">{item.name}</h3>
+                  <p className="text-amber-600 text-sm sm:text-base font-medium">$ {item.price.toFixed(2)} USD</p>
+                  <p className="text-stone-500 text-xs mt-1">{item.unit}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Oils & Cooking Section */}
+      <section id="oils-cooking" className="py-16 sm:py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-14">
+            <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Oils & Cooking</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+              Oils & Cooking
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {oilsCooking.map((item) => (
               <div key={item.name} className="bg-white border border-stone-200 group hover:border-amber-500 transition-all duration-300 text-center">
                 <div className="relative overflow-hidden">
                   <img
