@@ -54,7 +54,7 @@ function CategorySection({ categorySlug, title, subtitle, bgClass, gridCols, dis
               to={seeAllLink}
               className="inline-flex items-center gap-2 border border-amber-500 text-amber-600 px-6 py-2.5 text-xs tracking-wider uppercase hover:bg-amber-500 hover:text-white transition-all duration-300"
             >
-              See All Fresh Produce ({all.length})
+              See All {subtitle} ({all.length})
             </Link>
           </div>
         )}
@@ -195,9 +195,9 @@ function ProductsPage() {
           </section>
 
           <CategorySection categorySlug="fresh-produce" title="Farm Fresh, Straight to You" subtitle="Fresh Produce" bgClass="bg-white" gridCols="sm:grid-cols-2 lg:grid-cols-4" seeAllLink="/fresh-produce" />
-          <CategorySection categorySlug="meat-seafood" title="Meat & Seafood" subtitle="Meat & Seafood" bgClass="bg-amber-50/50" gridCols="sm:grid-cols-2 lg:grid-cols-3" disclaimer="Prices subject to change. Fresh meat and seafood are sold by weight." />
-          <CategorySection categorySlug="oils-cooking" title="Oils & Cooking" subtitle="Oils & Cooking" bgClass="bg-white" gridCols="sm:grid-cols-2 lg:grid-cols-3" />
-          <CategorySection categorySlug="rice-grains" title="Rice & Grains" subtitle="Rice & Grains" bgClass="bg-amber-50/50" gridCols="sm:grid-cols-2 lg:grid-cols-4" />
+          <CategorySection categorySlug="meat-seafood" title="Meat & Seafood" subtitle="Meat & Seafood" bgClass="bg-amber-50/50" gridCols="sm:grid-cols-2 lg:grid-cols-3" disclaimer="Prices subject to change. Fresh meat and seafood are sold by weight." seeAllLink="/meat-seafood" />
+          <CategorySection categorySlug="oils-cooking" title="Oils & Cooking" subtitle="Oils & Cooking" bgClass="bg-white" gridCols="sm:grid-cols-2 lg:grid-cols-3" seeAllLink="/oils-cooking" />
+          <CategorySection categorySlug="rice-grains" title="Rice & Grains" subtitle="Rice & Grains" bgClass="bg-amber-50/50" gridCols="sm:grid-cols-2 lg:grid-cols-4" seeAllLink="/rice-grains" />
         </>
       )}
     </div>
