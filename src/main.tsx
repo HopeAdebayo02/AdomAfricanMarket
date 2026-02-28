@@ -13,6 +13,7 @@ import FreshProducePage from './pages/FreshProducePage.tsx'
 import MeatSeafoodPage from './pages/MeatSeafoodPage.tsx'
 import OilsCookingPage from './pages/OilsCookingPage.tsx'
 import RiceGrainsPage from './pages/RiceGrainsPage.tsx'
+import PantryPage from './pages/PantryPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -29,6 +30,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/meat-seafood" element={<MeatSeafoodPage />} />
           <Route path="/oils-cooking" element={<OilsCookingPage />} />
           <Route path="/rice-grains" element={<RiceGrainsPage />} />
+          <Route path="/pantry-packaged" element={<PantryPage />} />
         </Route>
       </Routes>
     </HashRouter>
