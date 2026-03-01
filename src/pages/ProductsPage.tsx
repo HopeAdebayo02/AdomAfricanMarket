@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Search, ChevronDown, ChevronUp } from 'lucide-react'
-import { categories, products, searchProducts, getFeaturedByCategory, getProductsByCategory, getProductsBySubcategory } from '../data'
+import { categories, searchProducts, getFeaturedByCategory, getProductsByCategory, getProductsBySubcategory } from '../data'
 import type { Product } from '../data'
 
 function ProductCard({ item }: { item: Product }) {
@@ -222,36 +222,6 @@ function ProductsPage() {
                       className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-transparent group-hover:border-amber-500 transition-all"
                       onError={(e) => { (e.target as HTMLImageElement).src = "https://placehold.co/100x100/png" }}
                     />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Popular Products Grid */}
-          <section id="products" className="py-16 sm:py-20 lg:py-28 bg-amber-50/50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-10 sm:mb-14">
-                <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Our Products</p>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-                  Popular African Staples
-                </h2>
-              </div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                {products.map((product) => (
-                  <div key={product.name} className="bg-white border border-stone-200 group hover:border-amber-500 transition-all duration-300">
-                    <div className="p-4 sm:p-6 flex items-center justify-between">
-                      <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase">{product.name}</h3>
-                      <span className="text-stone-600 text-sm sm:text-base">$ {product.price.toFixed(2)} USD</span>
-                    </div>
-                    <div className="relative overflow-hidden">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-48 sm:h-56 lg:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                        onError={(e) => { (e.target as HTMLImageElement).src = product.fallback }}
-                      />
-                    </div>
                   </div>
                 ))}
               </div>
