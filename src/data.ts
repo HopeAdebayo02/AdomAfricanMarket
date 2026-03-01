@@ -3,7 +3,7 @@ export interface Product {
   name: string
   price: number
   unit: string
-  category: "fresh-produce" | "meat-seafood" | "oils-cooking" | "rice-grains" | "pantry-packaged"
+  category: "fresh-produce" | "meat-seafood" | "oils-cooking" | "rice-grains" | "pantry-packaged" | "spices-seasoning"
   subcategory?: string
   featured: boolean
   image: string
@@ -77,6 +77,13 @@ export const allProducts: Product[] = [
   { slug: "milo", name: "Milo", price: 30.00, unit: "each", category: "pantry-packaged", subcategory: "beverages", featured: false, image: "/images/drinks.jpg", fallback: "https://placehold.co/400x300/png", description: "Milo chocolate malt drink mix. A beloved African staple for hot or cold beverages.", metaTitle: "Milo - Adom African Market Minneapolis", metaDescription: "Buy Milo at Adom African Market in Minneapolis. Chocolate malt drink mix. $30.00." },
   { slug: "club", name: "Club", price: 2.99, unit: "each", category: "pantry-packaged", subcategory: "beverages", featured: false, image: "/images/drinks.jpg", fallback: "https://placehold.co/400x300/png", description: "Club soft drink, a refreshing carbonated beverage popular across West Africa.", metaTitle: "Club Drink - Adom African Market Minneapolis", metaDescription: "Buy Club drink at Adom African Market in Minneapolis. Refreshing carbonated beverage. $2.99." },
   { slug: "zobo-jackobug", name: "Zobo (Jackobug)", price: 0, unit: "each", category: "pantry-packaged", subcategory: "beverages", featured: false, image: "/images/drinks.jpg", fallback: "https://placehold.co/400x300/png", description: "Zobo (Jackobug) drink, a traditional West African herbal beverage. Price to be determined.", metaTitle: "Zobo Jackobug - Adom African Market Minneapolis", metaDescription: "Buy Zobo (Jackobug) at Adom African Market in Minneapolis. Traditional herbal beverage." },
+
+  { slug: "shrimp-powder", name: "Shrimp Powder", price: 7.99, unit: "each", category: "spices-seasoning", featured: true, image: "/images/spices.jpg", fallback: "https://placehold.co/400x300/png", description: "Shrimp powder, a key seasoning in West African cooking. Adds rich umami flavor to soups, stews, and rice dishes.", metaTitle: "Shrimp Powder - Adom African Market Minneapolis", metaDescription: "Buy shrimp powder at Adom African Market in Minneapolis. Rich umami seasoning for soups and stews. $7.99." },
+  { slug: "alligator-pepper", name: "Alligator Pepper", price: 9.99, unit: "each", category: "spices-seasoning", featured: true, image: "/images/spices.jpg", fallback: "https://placehold.co/400x300/png", description: "Alligator pepper, a traditional West African spice with a warm, peppery flavor. Used in ceremonies, cooking, and traditional medicine.", metaTitle: "Alligator Pepper - Adom African Market Minneapolis", metaDescription: "Buy alligator pepper at Adom African Market in Minneapolis. Traditional West African spice. $9.99." },
+  { slug: "njansan", name: "Njansan", price: 3.99, unit: "each", category: "spices-seasoning", featured: true, image: "/images/spices.jpg", fallback: "https://placehold.co/400x300/png", description: "Njansan seeds, a unique Cameroonian spice with a nutty, aromatic flavor. Essential for traditional Cameroonian dishes.", metaTitle: "Njansan - Adom African Market Minneapolis", metaDescription: "Buy njansan at Adom African Market in Minneapolis. Unique Cameroonian spice. $3.99." },
+  { slug: "nido", name: "Nido", price: 80.00, unit: "each", category: "spices-seasoning", featured: true, image: "/images/spices.jpg", fallback: "https://placehold.co/400x300/png", description: "Nido powdered milk, a household staple across Africa. Rich, creamy, and perfect for beverages, baking, and cooking.", metaTitle: "Nido - Adom African Market Minneapolis", metaDescription: "Buy Nido powdered milk at Adom African Market in Minneapolis. Household staple for beverages and cooking. $80.00." },
+  { slug: "onugbu", name: "Onugbu", price: 35.00, unit: "each", category: "spices-seasoning", featured: false, image: "/images/spices.jpg", fallback: "https://placehold.co/400x300/png", description: "Onugbu (bitter leaf), dried and ready for use in traditional Nigerian soups like ofe onugbu. Rich in nutrients.", metaTitle: "Onugbu - Adom African Market Minneapolis", metaDescription: "Buy onugbu (bitter leaf) at Adom African Market in Minneapolis. For traditional Nigerian soups. $35.00." },
+  { slug: "conga-sachet", name: "Conga Sachet", price: 35.00, unit: "each", category: "spices-seasoning", featured: false, image: "/images/spices.jpg", fallback: "https://placehold.co/400x300/png", description: "Conga sachet seasoning, a popular West African flavor enhancer. Adds depth and richness to any dish.", metaTitle: "Conga Sachet - Adom African Market Minneapolis", metaDescription: "Buy Conga sachet at Adom African Market in Minneapolis. Popular West African seasoning. $35.00." },
 ]
 
 export function getProductBySlug(slug: string): Product | undefined {
@@ -113,6 +120,7 @@ export const categories = [
   { name: "Fresh Meat & Seafood", slug: "meat-seafood", image: "/images/snapper.jpg" },
   { name: "Rice & Grains", slug: "rice-grains", image: "/images/grains.jpg" },
   { name: "Pantry / Packaged Foods", slug: "pantry-packaged", image: "/images/cookies.jpg" },
+  { name: "Spices & Seasoning", slug: "spices-seasoning", image: "/images/spices.jpg" },
 ]
 
 export const products = [

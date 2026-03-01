@@ -234,6 +234,7 @@ function ProductsPage() {
           <CategorySection categorySlug="rice-grains" title="Rice & Grains" subtitle="Rice & Grains" bgClass="bg-amber-50/50" gridCols="sm:grid-cols-2 lg:grid-cols-4" seeAllLink="/rice-grains" />
 
           <PantrySection />
+          <CategorySection categorySlug="spices-seasoning" title="Spices & Seasoning" subtitle="Spices & Seasoning" bgClass="bg-amber-50/50" gridCols="sm:grid-cols-2 lg:grid-cols-4" seeAllLink="/spices-seasoning" />
         </>
       )}
     </div>

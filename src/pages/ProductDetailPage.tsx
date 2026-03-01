@@ -10,6 +10,7 @@ const categoryLabels: Record<Product["category"], string> = {
   "oils-cooking": "Oils & Cooking",
   "rice-grains": "Rice & Grains",
   "pantry-packaged": "Pantry / Packaged Foods",
+  "spices-seasoning": "Spices & Seasoning",
 }
 
 function ProductDetailPage() {
