@@ -49,7 +49,7 @@ function ContactPage() {
       </section>
 
       {/* Contact / Visit Section */}
-      <section id="contact" className="py-16 sm:py-20 lg:py-28 bg-stone-950 text-white">
+      <section id="contact-form" className="py-16 sm:py-20 lg:py-28 bg-stone-950 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div>

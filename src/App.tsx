@@ -1,15 +1,33 @@
 import { useState, useEffect } from 'react'
 import { ShoppingCart, Menu, X, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
-import { Link, Outlet, useLocation } from 'react-router-dom'
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import './App.css'
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [location.pathname])
+    if (location.state && (location.state as { scrollTo?: string }).scrollTo) {
+      const id = (location.state as { scrollTo: string }).scrollTo
+      setTimeout(() => {
+        const el = document.getElementById(id)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [location.pathname, location.state])
+
+  const goToContact = () => {
+    if (location.pathname === '/contact') {
+      const el = document.getElementById('contact-form')
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/contact', { state: { scrollTo: 'contact-form' } })
+    }
+  }
 
   const isActive = (path: string) => location.pathname === path
 
@@ -30,6 +48,7 @@ function App() {
               <Link to="/menu" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/menu') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Recipes</Link>
               <Link to="/shipping" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/shipping') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Gani Shipping</Link>
               <Link to="/contact" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/contact') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Review</Link>
+              <button onClick={goToContact} className="text-sm tracking-wider transition-colors uppercase hover:text-amber-500">Contact</button>
             </div>
 
             <div className="flex items-center gap-3 sm:gap-4">
@@ -59,6 +78,7 @@ function App() {
               <Link to="/menu" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Recipes</Link>
               <Link to="/shipping" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Gani Shipping</Link>
               <Link to="/contact" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Review</Link>
+              <button className="block text-sm tracking-wider hover:text-amber-500 uppercase text-left" onClick={() => { setMobileMenuOpen(false); goToContact() }}>Contact</button>
             </div>
           </div>
         )}
@@ -95,6 +115,7 @@ function App() {
                 <li><Link to="/menu" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Recipes</Link></li>
                 <li><Link to="/shipping" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Gani Shipping</Link></li>
                 <li><Link to="/contact" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Review</Link></li>
+                <li><button onClick={goToContact} className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Contact</button></li>
               </ul>
             </div>
             <div>
