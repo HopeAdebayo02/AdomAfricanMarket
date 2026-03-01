@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ShoppingCart } from 'lucide-react'
 import { getProductBySlug, getProductsByCategory } from '../data'
+import { useCart } from '../CartContext'
 import type { Product } from '../data'
 
 const categoryLabels: Record<Product["category"], string> = {
@@ -16,7 +17,17 @@ const categoryLabels: Record<Product["category"], string> = {
 function ProductDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
+  const { addToCart } = useCart()
+  const [added, setAdded] = useState(false)
   const product = slug ? getProductBySlug(slug) : undefined
+
+  const handleAddToCart = () => {
+    if (product) {
+      addToCart(product)
+      setAdded(true)
+      setTimeout(() => setAdded(false), 1500)
+    }
+  }
 
   useEffect(() => {
     if (product) {
@@ -132,6 +143,10 @@ function ProductDetailPage() {
                 <p className="text-stone-500 text-xs italic mb-6">Prices subject to change. Fresh meat and seafood are sold by weight.</p>
               )}
               <div className="flex flex-wrap gap-4">
+                <button onClick={handleAddToCart} className={`inline-flex items-center gap-2 px-8 py-3 text-xs tracking-wider uppercase transition-all duration-300 ${added ? 'bg-green-600 text-white border border-green-600' : 'bg-amber-600 text-white border border-amber-600 hover:bg-amber-700'}`}>
+                  <ShoppingCart size={16} />
+                  {added ? 'Added!' : 'Add to Cart'}
+                </button>
                 <button onClick={() => navigate('/contact', { state: { scrollTo: 'contact-form' } })} className="inline-block border border-amber-500 text-amber-600 px-8 py-3 text-xs tracking-wider uppercase hover:bg-amber-500 hover:text-white transition-all duration-300">
                   Visit Store
                 </button>

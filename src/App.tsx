@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import { ShoppingCart, Menu, X, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { useCart } from './CartContext'
 import './App.css'
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
+  const { totalItems } = useCart()
 
   useEffect(() => {
     if (location.state && (location.state as { scrollTo?: string }).scrollTo) {
@@ -52,10 +54,12 @@ function App() {
             </div>
 
             <div className="flex items-center gap-3 sm:gap-4">
-              <button className="relative p-2 hover:text-amber-500 transition-colors" aria-label="Cart">
+              <Link to="/cart" className="relative p-2 hover:text-amber-500 transition-colors" aria-label="Cart">
                 <ShoppingCart size={20} />
-                <span className="absolute -top-1 -right-1 bg-amber-600 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">0</span>
-              </button>
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-amber-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">{totalItems}</span>
+                )}
+              </Link>
               <Link to="/contact" className="hidden sm:inline-block border border-amber-500 text-amber-500 px-4 py-2 text-xs tracking-wider uppercase hover:bg-amber-500 hover:text-white transition-all">
                 Visit Us
               </Link>
