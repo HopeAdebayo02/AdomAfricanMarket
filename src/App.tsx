@@ -1,15 +1,35 @@
 import { useState, useEffect } from 'react'
 import { ShoppingCart, Menu, X, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
-import { Link, Outlet, useLocation } from 'react-router-dom'
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { useCart } from './CartContext'
 import './App.css'
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
+  const { totalItems } = useCart()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [location.pathname])
+    if (location.state && (location.state as { scrollTo?: string }).scrollTo) {
+      const id = (location.state as { scrollTo: string }).scrollTo
+      setTimeout(() => {
+        const el = document.getElementById(id)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [location.pathname, location.state])
+
+  const goToContact = () => {
+    if (location.pathname === '/contact') {
+      const el = document.getElementById('contact-form')
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/contact', { state: { scrollTo: 'contact-form' } })
+    }
+  }
 
   const isActive = (path: string) => location.pathname === path
 
@@ -27,16 +47,19 @@ function App() {
             <div className="hidden lg:flex items-center gap-8">
               <Link to="/" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Home</Link>
               <Link to="/products" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/products') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Products</Link>
-              <Link to="/menu" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/menu') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Menu</Link>
+              <Link to="/menu" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/menu') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Recipes</Link>
               <Link to="/shipping" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/shipping') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Gani Shipping</Link>
-              <Link to="/contact" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/contact') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Contact</Link>
+              <Link to="/contact" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/contact') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Review</Link>
+              <button onClick={goToContact} className="text-sm tracking-wider transition-colors uppercase hover:text-amber-500">Contact</button>
             </div>
 
             <div className="flex items-center gap-3 sm:gap-4">
-              <button className="relative p-2 hover:text-amber-500 transition-colors" aria-label="Cart">
+              <Link to="/cart" className="relative p-2 hover:text-amber-500 transition-colors" aria-label="Cart">
                 <ShoppingCart size={20} />
-                <span className="absolute -top-1 -right-1 bg-amber-600 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">0</span>
-              </button>
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-amber-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">{totalItems}</span>
+                )}
+              </Link>
               <Link to="/contact" className="hidden sm:inline-block border border-amber-500 text-amber-500 px-4 py-2 text-xs tracking-wider uppercase hover:bg-amber-500 hover:text-white transition-all">
                 Visit Us
               </Link>
@@ -56,9 +79,10 @@ function App() {
             <div className="px-4 py-4 space-y-3">
               <Link to="/" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Home</Link>
               <Link to="/products" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Products</Link>
-              <Link to="/menu" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Menu</Link>
+              <Link to="/menu" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Recipes</Link>
               <Link to="/shipping" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Gani Shipping</Link>
-              <Link to="/contact" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+              <Link to="/contact" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Review</Link>
+              <button className="block text-sm tracking-wider hover:text-amber-500 uppercase text-left" onClick={() => { setMobileMenuOpen(false); goToContact() }}>Contact</button>
             </div>
           </div>
         )}
@@ -92,9 +116,10 @@ function App() {
               <ul className="space-y-2 sm:space-y-3">
                 <li><Link to="/" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Home</Link></li>
                 <li><Link to="/products" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Products</Link></li>
-                <li><Link to="/menu" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Menu</Link></li>
+                <li><Link to="/menu" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Recipes</Link></li>
                 <li><Link to="/shipping" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Gani Shipping</Link></li>
-                <li><Link to="/contact" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Contact</Link></li>
+                <li><Link to="/contact" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Review</Link></li>
+                <li><button onClick={goToContact} className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Contact</button></li>
               </ul>
             </div>
             <div>

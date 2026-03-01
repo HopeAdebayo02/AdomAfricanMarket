@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import App from './App.tsx'
+import { CartProvider } from './CartContext.tsx'
+import CartPage from './pages/CartPage.tsx'
 import HomePage from './pages/HomePage.tsx'
 import ProductsPage from './pages/ProductsPage.tsx'
 import MenuPage from './pages/MenuPage.tsx'
@@ -18,6 +20,7 @@ import SpicesSeasoningPage from './pages/SpicesSeasoningPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <CartProvider>
     <HashRouter>
       <Routes>
         <Route element={<App />}>
@@ -33,8 +36,10 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/rice-grains" element={<RiceGrainsPage />} />
           <Route path="/pantry-packaged" element={<PantryPage />} />
           <Route path="/spices-seasoning" element={<SpicesSeasoningPage />} />
+          <Route path="/cart" element={<CartPage />} />
         </Route>
       </Routes>
     </HashRouter>
+    </CartProvider>
   </StrictMode>,
 )

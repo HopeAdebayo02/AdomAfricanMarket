@@ -1,31 +1,15 @@
-import { useState } from 'react'
 import { menuItems } from '../data'
 
 function MenuPage() {
-  const [activeMenuTab, setActiveMenuTab] = useState("All")
-
   return (
     <div className="pt-16 sm:pt-20">
       <section id="menu" className="py-16 sm:py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 sm:mb-14">
-            <div>
-              <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Our Selection</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-                The Best Products
-              </h2>
-            </div>
-            <div className="flex gap-4 sm:gap-6 mt-4 lg:mt-0">
-              {["All", "Grains", "Spices", "Oils"].map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveMenuTab(tab)}
-                  className={`text-xs sm:text-sm tracking-wider uppercase transition-colors ${activeMenuTab === tab ? 'text-amber-600 underline underline-offset-4' : 'text-stone-500 hover:text-stone-800'}`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
+          <div className="mb-10 sm:mb-14">
+            <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Our Recipes</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+              Recipes
+            </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-x-8 lg:gap-x-12">
             {menuItems.map((item) => (

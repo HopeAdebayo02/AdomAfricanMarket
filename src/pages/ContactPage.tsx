@@ -49,7 +49,7 @@ function ContactPage() {
       </section>
 
       {/* Contact / Visit Section */}
-      <section id="contact" className="py-16 sm:py-20 lg:py-28 bg-stone-950 text-white">
+      <section id="contact-form" className="py-16 sm:py-20 lg:py-28 bg-stone-950 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
@@ -98,10 +98,10 @@ function ContactPage() {
             <div className="space-y-8 sm:space-y-10 lg:pl-8">
               <div>
                 <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 text-amber-500">Visit Us</h3>
-                <div className="flex items-start gap-3 text-stone-400 text-sm">
+                <a href="https://maps.apple.com/place?address=1224%20E%2066th%20St,%20Minneapolis,%20MN%20%2055423,%20United%20States&coordinate=44.883902,-93.257153&name=Adom%20African%20Market&place-id=IC514E0F249775D9B&map=explore" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-stone-400 text-sm hover:text-amber-500 transition-colors">
                   <MapPin size={18} className="flex-shrink-0 mt-0.5" />
                   <p>1224 E 66th St<br />Minneapolis, MN 55423</p>
-                </div>
+                </a>
               </div>
               <div>
                 <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 text-amber-500">Contact</h3>
