@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Search, ChevronDown, ChevronUp } from 'lucide-react'
-import { categories, products, searchProducts, getFeaturedByCategory, getProductsByCategory } from '../data'
+import { categories, products, searchProducts, getFeaturedByCategory, getProductsByCategory, getProductsBySubcategory } from '../data'
 import type { Product } from '../data'
 
 function ProductCard({ item }: { item: Product }) {
@@ -72,6 +72,60 @@ function CategorySection({ categorySlug, title, subtitle, bgClass, gridCols, dis
             </button>
           </div>
         )}
+      </div>
+    </section>
+  )
+}
+
+const pantrySubcategories = [
+  { key: "bread", label: "Bread" },
+  { key: "cookies-crackers", label: "Cookies & Crackers" },
+  { key: "snacks", label: "Snacks" },
+  { key: "beverages", label: "Beverages & Drinks" },
+]
+
+function PantrySection() {
+  const [openSection, setOpenSection] = useState<string | null>(null)
+
+  return (
+    <section id="pantry-packaged" className="py-16 sm:py-20 lg:py-28 scroll-mt-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 sm:mb-14">
+          <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Pantry / Packaged Foods</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+            Pantry / Packaged Foods
+          </h2>
+        </div>
+        <div className="space-y-3">
+          {pantrySubcategories.map((sub) => {
+            const isOpen = openSection === sub.key
+            const items = getProductsBySubcategory(sub.key)
+            return (
+              <div key={sub.key}>
+                <button
+                  onClick={() => setOpenSection(isOpen ? null : sub.key)}
+                  className="w-full flex items-center justify-between px-6 py-4 sm:py-5 bg-amber-50/50 border border-stone-200 hover:border-amber-500 transition-all duration-300"
+                >
+                  <span className="text-lg sm:text-xl font-light tracking-wider uppercase" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+                    {sub.label}
+                  </span>
+                  <span className="flex items-center gap-2 text-amber-600 text-xs tracking-wider uppercase">
+                    {isOpen ? <><span>Hide</span><ChevronUp size={18} /></> : <><span>Show All ({items.length})</span><ChevronDown size={18} /></>}
+                  </span>
+                </button>
+                {isOpen && (
+                  <div className="pt-6 pb-2">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                      {items.map((item) => (
+                        <ProductCard key={item.slug} item={item} />
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
       </div>
     </section>
   )
@@ -199,7 +253,7 @@ function ProductsPage() {
           <CategorySection categorySlug="oils-cooking" title="Oils & Cooking" subtitle="Oils & Cooking" bgClass="bg-white" gridCols="sm:grid-cols-2 lg:grid-cols-4" seeAllLink="/oils-cooking" />
           <CategorySection categorySlug="rice-grains" title="Rice & Grains" subtitle="Rice & Grains" bgClass="bg-amber-50/50" gridCols="sm:grid-cols-2 lg:grid-cols-4" seeAllLink="/rice-grains" />
 
-          <CategorySection categorySlug="pantry-packaged" title="Pantry / Packaged Foods" subtitle="Pantry / Packaged Foods" bgClass="bg-white" gridCols="sm:grid-cols-2 lg:grid-cols-4" seeAllLink="/pantry-packaged" />
+          <PantrySection />
         </>
       )}
     </div>
