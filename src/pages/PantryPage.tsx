@@ -1,8 +1,15 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
-import { getProductsByCategory } from '../data'
+import { getProductsBySubcategory } from '../data'
 import type { Product } from '../data'
+
+const subcategories = [
+  { key: "bread", label: "Bread" },
+  { key: "cookies-crackers", label: "Cookies & Crackers" },
+  { key: "snacks", label: "Snacks" },
+  { key: "beverages", label: "Beverages & Drinks" },
+]
 
 function ProductCard({ item }: { item: Product }) {
   return (
@@ -25,8 +32,6 @@ function ProductCard({ item }: { item: Product }) {
 }
 
 function PantryPage() {
-  const allPantry = getProductsByCategory('pantry-packaged')
-
   useEffect(() => {
     document.title = 'Pantry / Packaged Foods - Adom African Market Minneapolis'
     const metaDesc = document.querySelector('meta[name="description"]')
@@ -59,13 +64,26 @@ function PantryPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
               All Pantry / Packaged Foods
             </h1>
-            <p className="text-stone-500 text-sm mt-4">{allPantry.length} items available</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {allPantry.map((item) => (
-              <ProductCard key={item.slug} item={item} />
-            ))}
-          </div>
+
+          {subcategories.map((sub, idx) => {
+            const items = getProductsBySubcategory(sub.key)
+            return (
+              <div key={sub.key} className={idx > 0 ? "mt-16" : ""}>
+                <div className="text-center mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+                    {sub.label}
+                  </h2>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                  {items.map((item) => (
+                    <ProductCard key={item.slug} item={item} />
+                  ))}
+                </div>
+              </div>
+            )
+          })}
+
           <div className="text-center mt-12">
             <Link to="/products" className="inline-flex items-center gap-2 border border-amber-500 text-amber-600 px-6 py-2.5 text-xs tracking-wider uppercase hover:bg-amber-500 hover:text-white transition-all duration-300">
               <ArrowLeft size={16} /> Back to Products
