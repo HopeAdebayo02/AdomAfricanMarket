@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { getProductBySlug, getProductsByCategory } from '../data'
 import type { Product } from '../data'
@@ -15,6 +15,7 @@ const categoryLabels: Record<Product["category"], string> = {
 
 function ProductDetailPage() {
   const { slug } = useParams<{ slug: string }>()
+  const navigate = useNavigate()
   const product = slug ? getProductBySlug(slug) : undefined
 
   useEffect(() => {
@@ -131,9 +132,9 @@ function ProductDetailPage() {
                 <p className="text-stone-500 text-xs italic mb-6">Prices subject to change. Fresh meat and seafood are sold by weight.</p>
               )}
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="inline-block border border-amber-500 text-amber-600 px-8 py-3 text-xs tracking-wider uppercase hover:bg-amber-500 hover:text-white transition-all duration-300">
+                <button onClick={() => navigate('/contact', { state: { scrollTo: 'contact-form' } })} className="inline-block border border-amber-500 text-amber-600 px-8 py-3 text-xs tracking-wider uppercase hover:bg-amber-500 hover:text-white transition-all duration-300">
                   Visit Store
-                </Link>
+                </button>
                 <a href="tel:+16128694117" className="inline-block border border-stone-300 text-stone-700 px-8 py-3 text-xs tracking-wider uppercase hover:border-stone-500 transition-all duration-300">
                   Call to Order
                 </a>
