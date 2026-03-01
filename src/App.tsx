@@ -29,7 +29,7 @@ function App() {
               <Link to="/products" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/products') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Products</Link>
               <Link to="/menu" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/menu') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Recipes</Link>
               <Link to="/shipping" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/shipping') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Gani Shipping</Link>
-              <Link to="/contact" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/contact') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Contact</Link>
+              <Link to="/contact" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/contact') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Review</Link>
             </div>
 
             <div className="flex items-center gap-3 sm:gap-4">
@@ -58,7 +58,7 @@ function App() {
               <Link to="/products" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Products</Link>
               <Link to="/menu" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Recipes</Link>
               <Link to="/shipping" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Gani Shipping</Link>
-              <Link to="/contact" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+              <Link to="/contact" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Review</Link>
             </div>
           </div>
         )}
@@ -94,7 +94,7 @@ function App() {
                 <li><Link to="/products" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Products</Link></li>
                 <li><Link to="/menu" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Recipes</Link></li>
                 <li><Link to="/shipping" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Gani Shipping</Link></li>
-                <li><Link to="/contact" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Contact</Link></li>
+                <li><Link to="/contact" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Review</Link></li>
               </ul>
             </div>
             <div>
