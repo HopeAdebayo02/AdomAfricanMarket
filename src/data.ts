@@ -115,12 +115,12 @@ export function searchProducts(query: string): Product[] {
 }
 
 export const categories = [
-  { name: "Oils & Cooking", slug: "oils-cooking", image: "/images/palm-oil.jpg" },
   { name: "Fresh Produce", slug: "fresh-produce", image: "/images/plantain.jpg" },
-  { name: "Fresh Meat & Seafood", slug: "meat-seafood", image: "/images/snapper.jpg" },
-  { name: "Rice & Grains", slug: "rice-grains", image: "/images/grains.jpg" },
-  { name: "Pantry / Packaged Foods", slug: "pantry-packaged", image: "/images/cookies.jpg" },
   { name: "Spices & Seasoning", slug: "spices-seasoning", image: "/images/spices.jpg" },
+  { name: "Fresh Meat & Seafood", slug: "meat-seafood", image: "/images/snapper.jpg" },
+  { name: "Oils & Cooking", slug: "oils-cooking", image: "/images/palm-oil.jpg" },
+  { name: "Rice & Grains", slug: "rice-grains", image: "/images/grains.jpg" },
+  { name: "Pantry", slug: "pantry-packaged", image: "/images/cookies.jpg" },
 ]
 
 export const products = [

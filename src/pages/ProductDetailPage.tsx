@@ -9,7 +9,7 @@ const categoryLabels: Record<Product["category"], string> = {
   "meat-seafood": "Fresh Meat & Seafood",
   "oils-cooking": "Oils & Cooking",
   "rice-grains": "Rice & Grains",
-  "pantry-packaged": "Pantry / Packaged Foods",
+  "pantry-packaged": "Pantry",
   "spices-seasoning": "Spices & Seasoning",
 }
 

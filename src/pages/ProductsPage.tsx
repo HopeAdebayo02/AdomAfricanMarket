@@ -93,9 +93,9 @@ function PantrySection() {
     <section id="pantry-packaged" className="py-16 sm:py-20 lg:py-28 scroll-mt-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-14">
-          <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Pantry / Packaged Foods</p>
+          <p className="text-amber-600 text-xs sm:text-sm tracking-widest uppercase mb-3">Pantry</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-            Pantry / Packaged Foods
+            Pantry
           </h2>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
@@ -209,17 +209,17 @@ function ProductsPage() {
       {!isSearching && (
         <>
           <section className="py-10 sm:py-16 bg-white border-b border-stone-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-12">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-2 gap-y-6 sm:gap-y-8 gap-x-8 sm:gap-x-16">
                 {categories.map((cat) => (
-                  <div key={cat.name} className="flex items-center gap-3 sm:gap-4 group cursor-pointer" onClick={() => scrollToSection(cat.slug)}>
-                    <span className="text-xl sm:text-2xl lg:text-4xl font-light tracking-wider uppercase text-stone-800 group-hover:text-amber-600 transition-colors" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+                  <div key={cat.name} className="flex items-center justify-center gap-3 sm:gap-4 group cursor-pointer" onClick={() => scrollToSection(cat.slug)}>
+                    <span className="text-base sm:text-lg lg:text-2xl font-light tracking-wider uppercase text-stone-800 group-hover:text-amber-600 transition-colors whitespace-nowrap" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
                       {cat.name}
                     </span>
                     <img
                       src={cat.image}
                       alt={cat.name}
-                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-transparent group-hover:border-amber-500 transition-all"
+                      className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-transparent group-hover:border-amber-500 transition-all flex-shrink-0"
                       onError={(e) => { (e.target as HTMLImageElement).src = "https://placehold.co/100x100/png" }}
                     />
                   </div>
