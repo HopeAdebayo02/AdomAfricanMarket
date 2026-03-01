@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Trash2, Plus, Minus } from 'lucide-react'
 import { useCart } from '../CartContext'
 
 function CartPage() {
   const { items, removeFromCart, updateQuantity, clearCart, totalPrice } = useCart()
+  const [showPhone, setShowPhone] = useState(false)
 
   return (
     <div className="pt-16 sm:pt-20">
@@ -101,9 +103,9 @@ function CartPage() {
                     <Link to="/products" className="inline-flex items-center gap-2 border border-amber-500 text-amber-600 px-6 py-2.5 text-xs tracking-wider uppercase hover:bg-amber-500 hover:text-white transition-all duration-300">
                       <ArrowLeft size={16} /> Continue Shopping
                     </Link>
-                    <a href="tel:+16128694117" className="inline-block bg-amber-600 text-white px-8 py-2.5 text-xs tracking-wider uppercase hover:bg-amber-700 transition-all duration-300">
+                    <button onClick={() => setShowPhone(true)} className="inline-block bg-amber-600 text-white px-8 py-2.5 text-xs tracking-wider uppercase hover:bg-amber-700 transition-all duration-300">
                       Call to Order
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -111,6 +113,17 @@ function CartPage() {
           )}
         </div>
       </section>
+      {showPhone && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={() => setShowPhone(false)}>
+          <div className="bg-white rounded-lg shadow-xl p-8 mx-4 max-w-sm w-full text-center" onClick={(e) => e.stopPropagation()}>
+            <p className="text-stone-800 text-lg font-semibold mb-2">Store Number</p>
+            <a href="tel:+16128694117" className="text-amber-600 text-2xl font-bold hover:underline">(612) 869-4117</a>
+            <button onClick={() => setShowPhone(false)} className="mt-6 block mx-auto border border-stone-300 text-stone-600 px-6 py-2 text-xs tracking-wider uppercase hover:border-stone-500 transition-all duration-300">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
