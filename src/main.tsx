@@ -9,6 +9,12 @@ import MenuPage from './pages/MenuPage.tsx'
 import ShippingPage from './pages/ShippingPage.tsx'
 import ContactPage from './pages/ContactPage.tsx'
 import ProductDetailPage from './pages/ProductDetailPage.tsx'
+import FreshProducePage from './pages/FreshProducePage.tsx'
+import MeatSeafoodPage from './pages/MeatSeafoodPage.tsx'
+import OilsCookingPage from './pages/OilsCookingPage.tsx'
+import RiceGrainsPage from './pages/RiceGrainsPage.tsx'
+import PantryPage from './pages/PantryPage.tsx'
+import SpicesSeasoningPage from './pages/SpicesSeasoningPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -21,6 +27,12 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/shipping" element={<ShippingPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/product/:slug" element={<ProductDetailPage />} />
+          <Route path="/fresh-produce" element={<FreshProducePage />} />
+          <Route path="/meat-seafood" element={<MeatSeafoodPage />} />
+          <Route path="/oils-cooking" element={<OilsCookingPage />} />
+          <Route path="/rice-grains" element={<RiceGrainsPage />} />
+          <Route path="/pantry-packaged" element={<PantryPage />} />
+          <Route path="/spices-seasoning" element={<SpicesSeasoningPage />} />
         </Route>
       </Routes>
     </HashRouter>
