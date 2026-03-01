@@ -27,7 +27,7 @@ function App() {
             <div className="hidden lg:flex items-center gap-8">
               <Link to="/" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Home</Link>
               <Link to="/products" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/products') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Products</Link>
-              <Link to="/menu" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/menu') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Menu</Link>
+              <Link to="/menu" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/menu') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Recipes</Link>
               <Link to="/shipping" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/shipping') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Gani Shipping</Link>
               <Link to="/contact" className={`text-sm tracking-wider transition-colors uppercase ${isActive('/contact') ? 'text-amber-500' : 'hover:text-amber-500'}`}>Contact</Link>
             </div>
@@ -56,7 +56,7 @@ function App() {
             <div className="px-4 py-4 space-y-3">
               <Link to="/" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Home</Link>
               <Link to="/products" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Products</Link>
-              <Link to="/menu" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Menu</Link>
+              <Link to="/menu" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Recipes</Link>
               <Link to="/shipping" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Gani Shipping</Link>
               <Link to="/contact" className="block text-sm tracking-wider hover:text-amber-500 uppercase" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
             </div>
@@ -92,7 +92,7 @@ function App() {
               <ul className="space-y-2 sm:space-y-3">
                 <li><Link to="/" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Home</Link></li>
                 <li><Link to="/products" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Products</Link></li>
-                <li><Link to="/menu" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Menu</Link></li>
+                <li><Link to="/menu" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Recipes</Link></li>
                 <li><Link to="/shipping" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Gani Shipping</Link></li>
                 <li><Link to="/contact" className="text-stone-400 text-sm hover:text-amber-500 transition-colors">Contact</Link></li>
               </ul>
