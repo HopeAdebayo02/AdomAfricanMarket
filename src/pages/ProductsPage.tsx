@@ -78,14 +78,16 @@ function CategorySection({ categorySlug, title, subtitle, bgClass, gridCols, dis
 }
 
 const pantrySubcategories = [
-  { key: "bread", label: "Bread" },
-  { key: "cookies-crackers", label: "Cookies & Crackers" },
-  { key: "snacks", label: "Snacks" },
-  { key: "beverages", label: "Beverages & Drinks" },
+  { key: "bread", label: "Bread", image: "/images/bread.jpg" },
+  { key: "cookies-crackers", label: "Cookies & Crackers", image: "/images/cookies.jpg" },
+  { key: "snacks", label: "Snacks", image: "/images/snacks.jpg" },
+  { key: "beverages", label: "Beverages & Drinks", image: "/images/drinks.jpg" },
 ]
 
 function PantrySection() {
-  const [openSection, setOpenSection] = useState<string | null>(null)
+  const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null)
+  const activeItems = activeSubcategory ? getProductsBySubcategory(activeSubcategory) : []
+  const activeLabel = pantrySubcategories.find((s) => s.key === activeSubcategory)?.label || ""
 
   return (
     <section id="pantry-packaged" className="py-16 sm:py-20 lg:py-28 scroll-mt-24 bg-white">
@@ -96,36 +98,44 @@ function PantrySection() {
             Pantry / Packaged Foods
           </h2>
         </div>
-        <div className="space-y-3">
-          {pantrySubcategories.map((sub) => {
-            const isOpen = openSection === sub.key
-            const items = getProductsBySubcategory(sub.key)
-            return (
-              <div key={sub.key}>
-                <button
-                  onClick={() => setOpenSection(isOpen ? null : sub.key)}
-                  className="w-full flex items-center justify-between px-6 py-4 sm:py-5 bg-amber-50/50 border border-stone-200 hover:border-amber-500 transition-all duration-300"
-                >
-                  <span className="text-lg sm:text-xl font-light tracking-wider uppercase" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-                    {sub.label}
-                  </span>
-                  <span className="flex items-center gap-2 text-amber-600 text-xs tracking-wider uppercase">
-                    {isOpen ? <><span>Hide</span><ChevronUp size={18} /></> : <><span>Show All ({items.length})</span><ChevronDown size={18} /></>}
-                  </span>
-                </button>
-                {isOpen && (
-                  <div className="pt-6 pb-2">
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                      {items.map((item) => (
-                        <ProductCard key={item.slug} item={item} />
-                      ))}
-                    </div>
-                  </div>
-                )}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {pantrySubcategories.map((sub) => (
+            <button
+              key={sub.key}
+              onClick={() => setActiveSubcategory(activeSubcategory === sub.key ? null : sub.key)}
+              className={`text-center block border transition-all duration-300 ${activeSubcategory === sub.key ? "border-amber-500" : "border-stone-200 hover:border-amber-500"}`}
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={sub.image}
+                  alt={sub.label}
+                  className="w-full h-40 sm:h-48 object-cover hover:scale-105 transition-transform duration-500"
+                  onError={(e) => { (e.target as HTMLImageElement).src = "https://placehold.co/400x300/png" }}
+                />
               </div>
-            )
-          })}
+              <div className="p-4 sm:p-5">
+                <h3 className="text-sm sm:text-base font-semibold tracking-wider uppercase mb-2">{sub.label}</h3>
+                <p className={`text-xs tracking-wider uppercase ${activeSubcategory === sub.key ? "text-amber-600" : "text-stone-400"}`}>
+                  {activeSubcategory === sub.key ? "Viewing" : "Click to View"}
+                </p>
+              </div>
+            </button>
+          ))}
         </div>
+        {activeSubcategory && (
+          <div className="mt-12">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl sm:text-3xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+                {activeLabel}
+              </h3>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+              {activeItems.map((item) => (
+                <ProductCard key={item.slug} item={item} />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )
